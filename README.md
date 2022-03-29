@@ -1,4 +1,4 @@
-# Motus (Web)
+# Motus
 
 - BDD (User / Contact / Classement) *D 3*
 
