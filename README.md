@@ -44,12 +44,13 @@
     - chrono
 
 - algorithme avancé:                *D 3*
+    - augmentation de la difficulté
     - génération du mot a partir d'une bank de donnée
 
-- mot trouvé:                      *D 2*
+- mot trouvé:                      *D 1*
     - définition du mot trouvé
 
-- Historique:                      *D 3*
+- Historique:                      *D 2*
     - historique des mots trouvés dans la partie
 
 - indicateur dans partie:                       *D 2*
