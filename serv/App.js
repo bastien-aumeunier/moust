@@ -1,6 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const bp = require('body-parser')
+const cors = require("cors");
 const login = require('./src/routes/users/Login')
 const register = require('./src/routes/users/Register')
  
@@ -20,6 +21,7 @@ app.listen(port, () => {
 
 app.use(bp.json())
 app.use(bp.urlencoded({ extended: true }))
+app.use(cors())
 
 
 app.post('/auth/login', async (req, res) =>{
