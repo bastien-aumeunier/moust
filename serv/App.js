@@ -4,7 +4,12 @@ const bp = require('body-parser')
 const cors = require("cors");
 const login = require('./src/routes/users/Login')
 const register = require('./src/routes/users/Register')
- 
+const GenerateWord = require('./src/routes/word/Generate')
+const verifExist = require('./src/routes/word/Verif')
+const GetUser = require('./src/routes/users/GetUser')
+const PostScore = require('./src/routes/score/Post')
+const GetScore = require('./src/routes/score/Get')
+
 const app = express();
 const port = 9000;
 
@@ -33,4 +38,29 @@ app.post('/auth/login', async (req, res) =>{
 app.post('/auth/register', async (req, res) => {
   res.sendStatus(await register(req.body))
 })
+
+app.get('/auth/account/user/:idUser', async (req, res) => {
+  let re = await GetUser(req.params.idUser)
+  res.status(re[0]).send(re[1])
+})
+
+app.get('/api/generate/:size', async (req, res) => {
+    res.send(await GenerateWord(req.params.size))
+
+})
+
+app.get('/api/verif/:word', (req, res) => {
+    res.sendStatus(verifExist(req.params.word))
+})
+
+app.post('/api/score', async (req, res) => {
+  res.sendStatus(await PostScore(req.body))
+})
+
+app.get('/api/score/:idUser', async (req, res) => {
+  let re = await GetScore(req.params.idUser)
+  res.status(re[0]).send(re[1])
+})
+
+
 
