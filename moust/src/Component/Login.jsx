@@ -1,6 +1,6 @@
 import { useState } from "react"
 import axios from 'axios'
-import { useNavigate } from "react-router-dom"
+import { useNavigate} from "react-router-dom"
 
 const Login = () => {
 
@@ -19,12 +19,7 @@ const Login = () => {
         }
         try {
             let req = await axios.post('http://172.27.48.1:9000/auth/login', payload)
-            let user = {
-                id: req.data.id,
-                username: req.data.username,
-            }
-            console.log('bye')
-            navigation('/', { state: { user: user } })
+            navigation('/', { state: { id: req.data.id, username: req.data.username} })
         } catch (error) {
             if (error.response.status === 403) {
                 setError('Information incorrectes')
@@ -52,11 +47,11 @@ const Login = () => {
             <form onSubmit={dbLogin}>
                 <label>Mail : </label>
                 <br />
-                <input type="text" value={mail} onChange={e => setMail(e.target.value)} />
+                <input type="email" value={mail} onChange={e => setMail(e.target.value)} required/>
                 <br />
                 <label>Password : </label>
                 <br />
-                <input type="password" value={password} onChange={e => setPassword(e.target.value)} />
+                <input type="password" value={password} onChange={e => setPassword(e.target.value)} required/>
                 <br />
                 <input type="submit" value="Connexion" />
             </form>

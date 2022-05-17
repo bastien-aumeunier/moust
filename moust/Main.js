@@ -1,5 +1,4 @@
 const { app, BrowserWindow } = require('electron')
-const store = require('./src/utils/Store.js')
 
 try {
     require('electron-reloader')(module)
@@ -38,6 +37,5 @@ app.on('activate', () => {
   }
 })
 
-console.log(store.get('idUser'))
 
 

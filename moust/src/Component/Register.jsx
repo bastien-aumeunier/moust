@@ -70,19 +70,19 @@ const Register = () => {
             <form onSubmit={dbRegister}>
                 <label>UserName : </label>
                 <br />
-                <input type="text" value={userName} onChange={e => setUserName(e.target.value)} />
+                <input type="text" value={userName} onChange={e => setUserName(e.target.value)} required />
                 <br />
                 <label>Mail : </label>
                 <br />
-                <input type="text" value={mail} onChange={e => setMail(e.target.value)} />
+                <input type="email" value={mail} onChange={e => setMail(e.target.value)} required/>
                 <br />
                 <label>Password : </label>
                 <br />
-                <input type="password" value={password} onChange={e => setPassword(e.target.value)} />
+                <input type="password" value={password} onChange={e => setPassword(e.target.value)} required/>
                 <br />
                 <label>Confirm Password : </label>
                 <br />
-                <input type="password" value={passwordConfirm} onChange={e => setPasswordConfirm(e.target.value)} />
+                <input type="password" value={passwordConfirm} onChange={e => setPasswordConfirm(e.target.value)} required/>
                 <br />
                 <input type="submit" value="Incription" />
                 <div>Vous avez deja un compte ? <button onClick={()=>navigation("/login")}>Connexion</button></div>
