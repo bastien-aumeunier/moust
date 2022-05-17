@@ -3,7 +3,6 @@ const UserSchema = require('../../utils/schema/User')
 const bcrypt = require('bcrypt')
 
 const login = async (arg) =>{
-    console.log('enter')
     try {
       let user = await UserSchema.findOne({mail: arg.mail})
       const match = await bcrypt.compare(arg.password, user.password)

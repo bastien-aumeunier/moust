@@ -2,7 +2,7 @@ const UserSchema = require('../../utils/schema/User')
 
 const bcrypt = require('bcrypt')
 
-alreadyExist = async (arg) =>{
+const alreadyExist = async (arg) =>{
     try {
       let user = await UserSchema.findOne({mail: arg.mail})
       if (user) {
@@ -11,7 +11,7 @@ alreadyExist = async (arg) =>{
         return false
       }
     } catch (error) {
-      return 500
+      return true
     }
 }
 
@@ -25,7 +25,6 @@ const Register = async (arg) =>{
       arg.password = await bcrypt.hash(arg.password, 10)
       let user = new UserSchema(arg)
       await user.save()
-      console.log('register')
       return 201
     } catch (e) {
       console.log(e)

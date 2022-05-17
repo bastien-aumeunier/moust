@@ -4,7 +4,6 @@ const PostScore = async (arg) =>{
     try {
         let score = new ScoreSchema(arg)
         await score.save()
-        console.log('scored')
         return 201
       } catch (e) {
         console.log(e)
