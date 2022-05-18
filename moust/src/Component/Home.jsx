@@ -7,6 +7,7 @@ import Profile from './Profile';
 import EditUsername from './EditUsername';
 import EditPassword from './EditPassword';
 import EditMail from './EditMail';
+import Multi from './Multi';
 
 const Home = () => {
         return (
@@ -16,6 +17,7 @@ const Home = () => {
                     <Route path='/login' element={<Login/>}/>
                     <Route path='/register' element={<Register/>}/>
                     <Route path='/solo' element={<Solo/>}/>
+                    <Route path='/multi' element={<Multi/>}/>
                     <Route path='/profile' element={<Profile/>}/>
                     <Route path='/edit/username' element={<EditUsername/>}/>
                     <Route path='/edit/password' element={<EditPassword/>}/>

@@ -69,11 +69,7 @@ const Solo = () => {
     const start = async() => {
         if(!startWord){
             setStartWord(true)
-            console.log('generation')
-            console.log(difficulty + '4444')
             lookdifficulty()
-            console.log('lookdifficulty finish')
-            console.log('difficulty : ' + difficulty)
             console.log(await generate(difficulty))
 
         }

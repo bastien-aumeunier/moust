@@ -14,8 +14,6 @@ const Menu = () => {
             setUserName(location.state.username)
         }
     }, [location])
-
-    console.log(userName)
     if(userId!==""){
         return(
             <div>
@@ -23,7 +21,7 @@ const Menu = () => {
                 <div>
                     <button onClick={() => navigation("/solo",{state: {id: userId, username: userName}})}>Jouer en Solo</button>
                     <br />
-                    <button onClick={() => navigation("/multi")}>Jouer en Multi</button>
+                    <button onClick={() => navigation("/multi",{state: {id: userId, username: userName}})}>Jouer en Multi</button>
                     <br />
                     <button onClick={() => navigation("/profile", {state: {id: userId, username: userName}})}>Profile</button>
                 </div>
